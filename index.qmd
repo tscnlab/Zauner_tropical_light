@@ -82,6 +82,8 @@ library(tidyverse) #a package for tidy data science
 library(gt) #a package for great tables
 #the following packages are needed for preview functions:
 library(svglite)
+library(xml2)
+library(downlit)
 ```
 
 We start by making a decision on the site we want to look at and collect some metadata about it.
