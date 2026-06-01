@@ -112,7 +112,7 @@ Want to use a different site? Just switch the Institution name in the code cell 
 
 : Overview of the available sites in the package
 
-## Load and visualize light exposure data for `r melidos_countries[[site]]`
+## Load and visualize `r params$dataset`-level light exposure data for `r melidos_countries[[site]]`
 
 The `load_data()` function loads pre-processed data from the *MeLiDos* project. The `site` argument can be set to one or multiple sites. In our case, `r site` loads the right data. Check above to see details about the site. To reduce data complexity, we use 1-minute aggregated data, which has also been pre-processed and cleaned. 
 

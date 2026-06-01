@@ -137,10 +137,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./license.html"> 
 <span class="menu-text">License</span></a>
   </li>  
@@ -169,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
   <li><a href="#how-this-page-works" id="toc-how-this-page-works" class="nav-link" data-scroll-target="#how-this-page-works">How this page works</a></li>
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#load-and-visualize-light-exposure-data-for-costa-rica" id="toc-load-and-visualize-light-exposure-data-for-costa-rica" class="nav-link" data-scroll-target="#load-and-visualize-light-exposure-data-for-costa-rica">Load and visualize light exposure data for Costa Rica</a></li>
+  <li><a href="#load-and-visualize-glasses-level-light-exposure-data-for-costa-rica" id="toc-load-and-visualize-glasses-level-light-exposure-data-for-costa-rica" class="nav-link" data-scroll-target="#load-and-visualize-glasses-level-light-exposure-data-for-costa-rica">Load and visualize glasses-level light exposure data for Costa Rica</a></li>
   <li><a href="#calculate-common-exposure-metrics" id="toc-calculate-common-exposure-metrics" class="nav-link" data-scroll-target="#calculate-common-exposure-metrics">Calculate common exposure metrics</a></li>
   <li><a href="#load-and-merge-sleep-wake-data-with-light-exposure-data" id="toc-load-and-merge-sleep-wake-data-with-light-exposure-data" class="nav-link" data-scroll-target="#load-and-merge-sleep-wake-data-with-light-exposure-data">Load and merge sleep-wake data with light exposure data</a></li>
   <li><a href="#adherence-to-brown-et-al.-recommendations" id="toc-adherence-to-brown-et-al.-recommendations" class="nav-link" data-scroll-target="#adherence-to-brown-et-al.-recommendations">Adherence to Brown et al.&nbsp;recommendations</a></li>
@@ -258,7 +254,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <li>merge sleep-wake data with PLE data</li>
 <li>calculate, summarize, and visualize adherence to recommendations for PLE</li>
 </ul>
-<p>The analysis uses standardized processing pipelines through the <a href="https://tscnlab.github.io/LightLogR/">LightLogR</a> package. <code>LightLogR</code> is designed to facilitate the principled import, processing, and visualization of such wearable‑derived data. An accessible entry point to <code>LightLogR</code> via a self‑contained analysis script is shown <a href="beginner.qmd">here</a>. Full documentation of <code>LightLogR</code>’s features is available on the <a href="https://tscnlab.github.io/LightLogR/">documentation page</a>, including numerous tutorials.</p>
+<p>The analysis uses standardized processing pipelines through the <a href="https://tscnlab.github.io/LightLogR/">LightLogR</a> package. <code>LightLogR</code> is designed to facilitate the principled import, processing, and visualization of such wearable‑derived data. Full documentation of <code>LightLogR</code>’s features is available on the <a href="https://tscnlab.github.io/LightLogR/">documentation page</a>, including numerous tutorials.</p>
 <p>This document assumes general familiarity with the R statistical software, ideally in a data‑science context<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 </section>
 <section id="how-this-page-works" class="level2">
@@ -387,8 +383,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 </tbody>
 </table>
 </section>
-<section id="load-and-visualize-light-exposure-data-for-costa-rica" class="level2">
-<h2 class="anchored" data-anchor-id="load-and-visualize-light-exposure-data-for-costa-rica">Load and visualize light exposure data for Costa Rica</h2>
+<section id="load-and-visualize-glasses-level-light-exposure-data-for-costa-rica" class="level2">
+<h2 class="anchored" data-anchor-id="load-and-visualize-glasses-level-light-exposure-data-for-costa-rica">Load and visualize glasses-level light exposure data for Costa Rica</h2>
 <p>The <code>load_data()</code> function loads pre-processed data from the <em>MeLiDos</em> project. The <code>site</code> argument can be set to one or multiple sites. In our case, UCR loads the right data. Check above to see details about the site. To reduce data complexity, we use 1-minute aggregated data, which has also been pre-processed and cleaned.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">load_data</span>(dataset, <span class="at">site =</span> site)</span>
@@ -425,23 +421,23 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>           melidos_countries[[site]])</span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="youkuzimli" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#youkuzimli table {
+<div id="pisyuomeut" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pisyuomeut table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#youkuzimli thead, #youkuzimli tbody, #youkuzimli tfoot, #youkuzimli tr, #youkuzimli td, #youkuzimli th {
+#pisyuomeut thead, #pisyuomeut tbody, #pisyuomeut tfoot, #pisyuomeut tr, #pisyuomeut td, #pisyuomeut th {
   border-style: none;
 }
 
-#youkuzimli p {
+#pisyuomeut p {
   margin: 0;
   padding: 0;
 }
 
-#youkuzimli .gt_table {
+#pisyuomeut .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -467,12 +463,12 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-left-color: #D3D3D3;
 }
 
-#youkuzimli .gt_caption {
+#pisyuomeut .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#youkuzimli .gt_title {
+#pisyuomeut .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -484,7 +480,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-width: 0;
 }
 
-#youkuzimli .gt_subtitle {
+#pisyuomeut .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -496,7 +492,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-top-width: 0;
 }
 
-#youkuzimli .gt_heading {
+#pisyuomeut .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -508,13 +504,13 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#youkuzimli .gt_bottom_border {
+#pisyuomeut .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#youkuzimli .gt_col_headings {
+#pisyuomeut .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -529,7 +525,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#youkuzimli .gt_col_heading {
+#pisyuomeut .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -549,7 +545,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   overflow-x: hidden;
 }
 
-#youkuzimli .gt_column_spanner_outer {
+#pisyuomeut .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -561,15 +557,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 4px;
 }
 
-#youkuzimli .gt_column_spanner_outer:first-child {
+#pisyuomeut .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#youkuzimli .gt_column_spanner_outer:last-child {
+#pisyuomeut .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#youkuzimli .gt_column_spanner {
+#pisyuomeut .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -581,11 +577,11 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   width: 100%;
 }
 
-#youkuzimli .gt_spanner_row {
+#pisyuomeut .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#youkuzimli .gt_group_heading {
+#pisyuomeut .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -611,7 +607,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   text-align: left;
 }
 
-#youkuzimli .gt_empty_group_heading {
+#pisyuomeut .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -626,15 +622,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   vertical-align: middle;
 }
 
-#youkuzimli .gt_from_md > :first-child {
+#pisyuomeut .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#youkuzimli .gt_from_md > :last-child {
+#pisyuomeut .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#youkuzimli .gt_row {
+#pisyuomeut .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -653,7 +649,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   overflow-x: hidden;
 }
 
-#youkuzimli .gt_stub {
+#pisyuomeut .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -666,7 +662,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#youkuzimli .gt_stub_row_group {
+#pisyuomeut .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -680,15 +676,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   vertical-align: top;
 }
 
-#youkuzimli .gt_row_group_first td {
+#pisyuomeut .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#youkuzimli .gt_row_group_first th {
+#pisyuomeut .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#youkuzimli .gt_summary_row {
+#pisyuomeut .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -698,16 +694,16 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#youkuzimli .gt_first_summary_row {
+#pisyuomeut .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#youkuzimli .gt_first_summary_row.thick {
+#pisyuomeut .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#youkuzimli .gt_last_summary_row {
+#pisyuomeut .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -717,7 +713,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#youkuzimli .gt_grand_summary_row {
+#pisyuomeut .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -727,7 +723,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#youkuzimli .gt_first_grand_summary_row {
+#pisyuomeut .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -737,7 +733,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-top-color: #D3D3D3;
 }
 
-#youkuzimli .gt_last_grand_summary_row_top {
+#pisyuomeut .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -747,11 +743,11 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#youkuzimli .gt_striped {
+#pisyuomeut .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#youkuzimli .gt_table_body {
+#pisyuomeut .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -760,7 +756,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#youkuzimli .gt_footnotes {
+#pisyuomeut .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -774,7 +770,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#youkuzimli .gt_footnote {
+#pisyuomeut .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -783,7 +779,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#youkuzimli .gt_sourcenotes {
+#pisyuomeut .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -797,7 +793,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#youkuzimli .gt_sourcenote {
+#pisyuomeut .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -805,72 +801,72 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#youkuzimli .gt_left {
+#pisyuomeut .gt_left {
   text-align: left;
 }
 
-#youkuzimli .gt_center {
+#pisyuomeut .gt_center {
   text-align: center;
 }
 
-#youkuzimli .gt_right {
+#pisyuomeut .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#youkuzimli .gt_font_normal {
+#pisyuomeut .gt_font_normal {
   font-weight: normal;
 }
 
-#youkuzimli .gt_font_bold {
+#pisyuomeut .gt_font_bold {
   font-weight: bold;
 }
 
-#youkuzimli .gt_font_italic {
+#pisyuomeut .gt_font_italic {
   font-style: italic;
 }
 
-#youkuzimli .gt_super {
+#pisyuomeut .gt_super {
   font-size: 65%;
 }
 
-#youkuzimli .gt_footnote_marks {
+#pisyuomeut .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#youkuzimli .gt_asterisk {
+#pisyuomeut .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#youkuzimli .gt_indent_1 {
+#pisyuomeut .gt_indent_1 {
   text-indent: 5px;
 }
 
-#youkuzimli .gt_indent_2 {
+#pisyuomeut .gt_indent_2 {
   text-indent: 10px;
 }
 
-#youkuzimli .gt_indent_3 {
+#pisyuomeut .gt_indent_3 {
   text-indent: 15px;
 }
 
-#youkuzimli .gt_indent_4 {
+#pisyuomeut .gt_indent_4 {
   text-indent: 20px;
 }
 
-#youkuzimli .gt_indent_5 {
+#pisyuomeut .gt_indent_5 {
   text-indent: 25px;
 }
 
-#youkuzimli .katex-display {
+#pisyuomeut .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#youkuzimli div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pisyuomeut div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -959,23 +955,23 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> melidos_colors[[site]] <span class="co">#provide a color for histogram generation</span></span>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="rhitrmvsbu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rhitrmvsbu table {
+<div id="mcjafzscke" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mcjafzscke table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rhitrmvsbu thead, #rhitrmvsbu tbody, #rhitrmvsbu tfoot, #rhitrmvsbu tr, #rhitrmvsbu td, #rhitrmvsbu th {
+#mcjafzscke thead, #mcjafzscke tbody, #mcjafzscke tfoot, #mcjafzscke tr, #mcjafzscke td, #mcjafzscke th {
   border-style: none;
 }
 
-#rhitrmvsbu p {
+#mcjafzscke p {
   margin: 0;
   padding: 0;
 }
 
-#rhitrmvsbu .gt_table {
+#mcjafzscke .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1001,12 +997,12 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-left-color: #D3D3D3;
 }
 
-#rhitrmvsbu .gt_caption {
+#mcjafzscke .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rhitrmvsbu .gt_title {
+#mcjafzscke .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1018,7 +1014,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-width: 0;
 }
 
-#rhitrmvsbu .gt_subtitle {
+#mcjafzscke .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1030,7 +1026,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-top-width: 0;
 }
 
-#rhitrmvsbu .gt_heading {
+#mcjafzscke .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1042,13 +1038,13 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#rhitrmvsbu .gt_bottom_border {
+#mcjafzscke .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rhitrmvsbu .gt_col_headings {
+#mcjafzscke .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1063,7 +1059,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#rhitrmvsbu .gt_col_heading {
+#mcjafzscke .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1083,7 +1079,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   overflow-x: hidden;
 }
 
-#rhitrmvsbu .gt_column_spanner_outer {
+#mcjafzscke .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1095,15 +1091,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 4px;
 }
 
-#rhitrmvsbu .gt_column_spanner_outer:first-child {
+#mcjafzscke .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rhitrmvsbu .gt_column_spanner_outer:last-child {
+#mcjafzscke .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rhitrmvsbu .gt_column_spanner {
+#mcjafzscke .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1115,11 +1111,11 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   width: 100%;
 }
 
-#rhitrmvsbu .gt_spanner_row {
+#mcjafzscke .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rhitrmvsbu .gt_group_heading {
+#mcjafzscke .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1145,7 +1141,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   text-align: left;
 }
 
-#rhitrmvsbu .gt_empty_group_heading {
+#mcjafzscke .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1160,15 +1156,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   vertical-align: middle;
 }
 
-#rhitrmvsbu .gt_from_md > :first-child {
+#mcjafzscke .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rhitrmvsbu .gt_from_md > :last-child {
+#mcjafzscke .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rhitrmvsbu .gt_row {
+#mcjafzscke .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1187,7 +1183,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   overflow-x: hidden;
 }
 
-#rhitrmvsbu .gt_stub {
+#mcjafzscke .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1200,7 +1196,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#rhitrmvsbu .gt_stub_row_group {
+#mcjafzscke .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1214,15 +1210,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   vertical-align: top;
 }
 
-#rhitrmvsbu .gt_row_group_first td {
+#mcjafzscke .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rhitrmvsbu .gt_row_group_first th {
+#mcjafzscke .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rhitrmvsbu .gt_summary_row {
+#mcjafzscke .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1232,16 +1228,16 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#rhitrmvsbu .gt_first_summary_row {
+#mcjafzscke .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rhitrmvsbu .gt_first_summary_row.thick {
+#mcjafzscke .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rhitrmvsbu .gt_last_summary_row {
+#mcjafzscke .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1251,7 +1247,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#rhitrmvsbu .gt_grand_summary_row {
+#mcjafzscke .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1261,7 +1257,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#rhitrmvsbu .gt_first_grand_summary_row {
+#mcjafzscke .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1271,7 +1267,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-top-color: #D3D3D3;
 }
 
-#rhitrmvsbu .gt_last_grand_summary_row_top {
+#mcjafzscke .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1281,11 +1277,11 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#rhitrmvsbu .gt_striped {
+#mcjafzscke .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rhitrmvsbu .gt_table_body {
+#mcjafzscke .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1294,7 +1290,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#rhitrmvsbu .gt_footnotes {
+#mcjafzscke .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1308,7 +1304,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#rhitrmvsbu .gt_footnote {
+#mcjafzscke .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1317,7 +1313,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#rhitrmvsbu .gt_sourcenotes {
+#mcjafzscke .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1331,7 +1327,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#rhitrmvsbu .gt_sourcenote {
+#mcjafzscke .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1339,72 +1335,72 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#rhitrmvsbu .gt_left {
+#mcjafzscke .gt_left {
   text-align: left;
 }
 
-#rhitrmvsbu .gt_center {
+#mcjafzscke .gt_center {
   text-align: center;
 }
 
-#rhitrmvsbu .gt_right {
+#mcjafzscke .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rhitrmvsbu .gt_font_normal {
+#mcjafzscke .gt_font_normal {
   font-weight: normal;
 }
 
-#rhitrmvsbu .gt_font_bold {
+#mcjafzscke .gt_font_bold {
   font-weight: bold;
 }
 
-#rhitrmvsbu .gt_font_italic {
+#mcjafzscke .gt_font_italic {
   font-style: italic;
 }
 
-#rhitrmvsbu .gt_super {
+#mcjafzscke .gt_super {
   font-size: 65%;
 }
 
-#rhitrmvsbu .gt_footnote_marks {
+#mcjafzscke .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rhitrmvsbu .gt_asterisk {
+#mcjafzscke .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rhitrmvsbu .gt_indent_1 {
+#mcjafzscke .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rhitrmvsbu .gt_indent_2 {
+#mcjafzscke .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rhitrmvsbu .gt_indent_3 {
+#mcjafzscke .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rhitrmvsbu .gt_indent_4 {
+#mcjafzscke .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rhitrmvsbu .gt_indent_5 {
+#mcjafzscke .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rhitrmvsbu .katex-display {
+#mcjafzscke .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rhitrmvsbu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mcjafzscke div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1893,23 +1889,23 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>               <span class="fu">paste0</span>(melidos_cities[[site]], melidos_countries[[site]], <span class="at">sep =</span> <span class="st">", "</span>)</span>
 <span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>             )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="bavudifkss" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bavudifkss table {
+<div id="yivrzszglk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yivrzszglk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bavudifkss thead, #bavudifkss tbody, #bavudifkss tfoot, #bavudifkss tr, #bavudifkss td, #bavudifkss th {
+#yivrzszglk thead, #yivrzszglk tbody, #yivrzszglk tfoot, #yivrzszglk tr, #yivrzszglk td, #yivrzszglk th {
   border-style: none;
 }
 
-#bavudifkss p {
+#yivrzszglk p {
   margin: 0;
   padding: 0;
 }
 
-#bavudifkss .gt_table {
+#yivrzszglk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1935,12 +1931,12 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-left-color: #D3D3D3;
 }
 
-#bavudifkss .gt_caption {
+#yivrzszglk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bavudifkss .gt_title {
+#yivrzszglk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1952,7 +1948,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-width: 0;
 }
 
-#bavudifkss .gt_subtitle {
+#yivrzszglk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1964,7 +1960,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-top-width: 0;
 }
 
-#bavudifkss .gt_heading {
+#yivrzszglk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1976,13 +1972,13 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#bavudifkss .gt_bottom_border {
+#yivrzszglk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bavudifkss .gt_col_headings {
+#yivrzszglk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1997,7 +1993,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#bavudifkss .gt_col_heading {
+#yivrzszglk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2017,7 +2013,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   overflow-x: hidden;
 }
 
-#bavudifkss .gt_column_spanner_outer {
+#yivrzszglk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2029,15 +2025,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 4px;
 }
 
-#bavudifkss .gt_column_spanner_outer:first-child {
+#yivrzszglk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bavudifkss .gt_column_spanner_outer:last-child {
+#yivrzszglk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bavudifkss .gt_column_spanner {
+#yivrzszglk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2049,11 +2045,11 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   width: 100%;
 }
 
-#bavudifkss .gt_spanner_row {
+#yivrzszglk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bavudifkss .gt_group_heading {
+#yivrzszglk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2079,7 +2075,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   text-align: left;
 }
 
-#bavudifkss .gt_empty_group_heading {
+#yivrzszglk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2094,15 +2090,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   vertical-align: middle;
 }
 
-#bavudifkss .gt_from_md > :first-child {
+#yivrzszglk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bavudifkss .gt_from_md > :last-child {
+#yivrzszglk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bavudifkss .gt_row {
+#yivrzszglk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2121,7 +2117,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   overflow-x: hidden;
 }
 
-#bavudifkss .gt_stub {
+#yivrzszglk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2134,7 +2130,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#bavudifkss .gt_stub_row_group {
+#yivrzszglk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2148,15 +2144,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   vertical-align: top;
 }
 
-#bavudifkss .gt_row_group_first td {
+#yivrzszglk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bavudifkss .gt_row_group_first th {
+#yivrzszglk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bavudifkss .gt_summary_row {
+#yivrzszglk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2166,16 +2162,16 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#bavudifkss .gt_first_summary_row {
+#yivrzszglk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bavudifkss .gt_first_summary_row.thick {
+#yivrzszglk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bavudifkss .gt_last_summary_row {
+#yivrzszglk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2185,7 +2181,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#bavudifkss .gt_grand_summary_row {
+#yivrzszglk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2195,7 +2191,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#bavudifkss .gt_first_grand_summary_row {
+#yivrzszglk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2205,7 +2201,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-top-color: #D3D3D3;
 }
 
-#bavudifkss .gt_last_grand_summary_row_top {
+#yivrzszglk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2215,11 +2211,11 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#bavudifkss .gt_striped {
+#yivrzszglk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bavudifkss .gt_table_body {
+#yivrzszglk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2228,7 +2224,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#bavudifkss .gt_footnotes {
+#yivrzszglk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2242,7 +2238,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#bavudifkss .gt_footnote {
+#yivrzszglk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2251,7 +2247,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#bavudifkss .gt_sourcenotes {
+#yivrzszglk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2265,7 +2261,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#bavudifkss .gt_sourcenote {
+#yivrzszglk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2273,72 +2269,72 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#bavudifkss .gt_left {
+#yivrzszglk .gt_left {
   text-align: left;
 }
 
-#bavudifkss .gt_center {
+#yivrzszglk .gt_center {
   text-align: center;
 }
 
-#bavudifkss .gt_right {
+#yivrzszglk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bavudifkss .gt_font_normal {
+#yivrzszglk .gt_font_normal {
   font-weight: normal;
 }
 
-#bavudifkss .gt_font_bold {
+#yivrzszglk .gt_font_bold {
   font-weight: bold;
 }
 
-#bavudifkss .gt_font_italic {
+#yivrzszglk .gt_font_italic {
   font-style: italic;
 }
 
-#bavudifkss .gt_super {
+#yivrzszglk .gt_super {
   font-size: 65%;
 }
 
-#bavudifkss .gt_footnote_marks {
+#yivrzszglk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bavudifkss .gt_asterisk {
+#yivrzszglk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bavudifkss .gt_indent_1 {
+#yivrzszglk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bavudifkss .gt_indent_2 {
+#yivrzszglk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bavudifkss .gt_indent_3 {
+#yivrzszglk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bavudifkss .gt_indent_4 {
+#yivrzszglk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bavudifkss .gt_indent_5 {
+#yivrzszglk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bavudifkss .katex-display {
+#yivrzszglk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bavudifkss div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#yivrzszglk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2959,7 +2955,7 @@ loaded via a namespace (and not attached):
 <span id="cb45-48"><a href="#cb45-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>calculate, summarize, and visualize adherence to recommendations for PLE</span>
 <span id="cb45-49"><a href="#cb45-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-50"><a href="#cb45-50" aria-hidden="true" tabindex="-1"></a>The analysis uses standardized processing pipelines through the <span class="co">[</span><span class="ot">LightLogR</span><span class="co">](https://tscnlab.github.io/LightLogR/)</span> package.</span>
-<span id="cb45-51"><a href="#cb45-51" aria-hidden="true" tabindex="-1"></a><span class="in">`LightLogR`</span> is designed to facilitate the principled import, processing, and visualization of such wearable‑derived data. An accessible entry point to <span class="in">`LightLogR`</span> via a self‑contained analysis script is shown <span class="co">[</span><span class="ot">here</span><span class="co">](beginner.qmd)</span>. Full documentation of <span class="in">`LightLogR`</span>’s features is available on the <span class="co">[</span><span class="ot">documentation page</span><span class="co">](https://tscnlab.github.io/LightLogR/)</span>, including numerous tutorials.</span>
+<span id="cb45-51"><a href="#cb45-51" aria-hidden="true" tabindex="-1"></a><span class="in">`LightLogR`</span> is designed to facilitate the principled import, processing, and visualization of such wearable‑derived data. Full documentation of <span class="in">`LightLogR`</span>’s features is available on the <span class="co">[</span><span class="ot">documentation page</span><span class="co">](https://tscnlab.github.io/LightLogR/)</span>, including numerous tutorials.</span>
 <span id="cb45-52"><a href="#cb45-52" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-53"><a href="#cb45-53" aria-hidden="true" tabindex="-1"></a>This document assumes general familiarity with the R statistical software, ideally in a data‑science context<span class="ot">[^2]</span>.</span>
 <span id="cb45-54"><a href="#cb45-54" aria-hidden="true" tabindex="-1"></a></span>
@@ -3023,7 +3019,7 @@ loaded via a namespace (and not attached):
 <span id="cb45-120"><a href="#cb45-120" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-121"><a href="#cb45-121" aria-hidden="true" tabindex="-1"></a>: Overview of the available sites in the package</span>
 <span id="cb45-122"><a href="#cb45-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-123"><a href="#cb45-123" aria-hidden="true" tabindex="-1"></a><span class="fu">## Load and visualize light exposure data for `r melidos_countries[[site]]`</span></span>
+<span id="cb45-123"><a href="#cb45-123" aria-hidden="true" tabindex="-1"></a><span class="fu">## Load and visualize `r params$dataset`-level light exposure data for `r melidos_countries[[site]]`</span></span>
 <span id="cb45-124"><a href="#cb45-124" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-125"><a href="#cb45-125" aria-hidden="true" tabindex="-1"></a>The <span class="in">`load_data()`</span> function loads pre-processed data from the *MeLiDos* project. The <span class="in">`site`</span> argument can be set to one or multiple sites. In our case, <span class="in">`r site`</span> loads the right data. Check above to see details about the site. To reduce data complexity, we use 1-minute aggregated data, which has also been pre-processed and cleaned. </span>
 <span id="cb45-126"><a href="#cb45-126" aria-hidden="true" tabindex="-1"></a></span>
