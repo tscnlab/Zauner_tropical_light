@@ -1,1 +1,1 @@
-Sitemap: https://tscnlab.github.io/QuartoWebsite/sitemap.xml
+Sitemap: https://tscnlab.github.io/Zauner_tropical_light/sitemap.xml
