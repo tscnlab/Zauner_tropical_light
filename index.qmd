@@ -91,6 +91,8 @@ library(downlit)
 We start by making a decision on the site we want to look at and collect some metadata about it.
 
 ```{r}
+params$site
+params$dataset
 site <- params$site
 dataset <- paste0("light_", params$dataset, "_1minute")
 melidos_coordinates[[site]]
