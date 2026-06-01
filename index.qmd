@@ -18,6 +18,8 @@ format:
 params:
   site: UCR
   dataset: glasses
+citation: 
+  container-title: Tropical light exposure & health seminar  
 ---
 
 ## Preface

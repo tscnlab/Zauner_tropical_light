@@ -1,0 +1,12 @@
+---
+title: "License"
+format:
+  html:
+    code-overflow: wrap
+---
+
+## License text
+
+```
+{{< include LICENSE >}}
+```

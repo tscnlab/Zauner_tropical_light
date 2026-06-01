@@ -14,7 +14,7 @@ website:
       - href: index.qmd
         text: Home
       - text: "License"
-        href: license.md
+        href: license.qmd
     right:
       - icon: github
         href: https://github.com/tscnlab/Zauner_tropical_light
