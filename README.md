@@ -1,36 +1,163 @@
-# QuartoWebsite
+# Tropical light exposure & health
 
-This repository serves as a template to set up a Quarto website on the TSCN GitHub organization.
+This repository contains a reproducible [Quarto](https://quarto.org/) document for the seminar **Open science and FAIR data practices for personal light exposure research**. The document demonstrates how open, FAIR workflows can be used to inspect personal light exposure data from the MeLiDos project and evaluate exposure patterns against published recommendations for healthy lighting.
 
-In order to set up a new Quarto website, you need to follow these steps:
+The rendered website is configured at: <https://tscnlab.github.io/Zauner_tropical_light/>.
 
--   Click on `Use this template` > `Create a new repository` in the top right corner of this page. 
--   Alternatively, you can simple create a new repository in the TSCN GitHub organization and use the template `tscnlab/QuartoWebsite` (see image below)
+## What is in this repository?
 
-In both cases:
+| File or directory | Purpose |
+| --- | --- |
+| `index.qmd` | The main Quarto document. It combines explanatory text, executable R code, figures, tables, and session information for the tropical light exposure analysis. |
+| `_quarto.yml` | Quarto project configuration for rendering this repository as a website. It sets the website title, navigation, GitHub links, HTML theme, table of contents, and execution options. |
+| `renv.lock` | A lockfile that records the R version and package versions used for the analysis so that the computational environment can be restored. |
+| `renv/activate.R` | The `renv` activation script used by the project. |
+| `license.qmd` | The license page included in the Quarto website navigation. |
+| `assets/` | Static files used by the Quarto document, including figures referenced by `index.qmd`. |
 
--   Check the box `Include all branches`
--   Set the repository visibility to `Public` (no site will be published otherwise)
--   Click `Create repository`
+## About the Quarto document
 
-**Congratulations - you have created a Website, complete with continuous integration (CI)**
+The main analysis lives in `index.qmd`. It is both a readable seminar document and an executable R analysis script. The document:
 
-![](assets/new_repo1.png)
+- introduces why personal light exposure matters for acute wellbeing and long-term mental, metabolic, and cardiovascular health;
+- introduces the MeLiDos project, which collected harmonized personal light exposure datasets across several countries;
+- loads the Costa Rica (`UCR`) 1-minute wearable light exposure dataset from the `melidosData` R package;
+- visualizes light exposure patterns with `LightLogR`;
+- computes common exposure summaries;
+- loads and merges sleep-wake annotations with personal light exposure data;
+- classifies wake, pre-sleep, and sleep intervals;
+- evaluates adherence to the Brown et al. recommendations for healthy daytime, evening, and nighttime light exposure;
+- produces summary plots, formatted tables, and session information for reproducibility.
 
-The website will be published at `https://tscnlab.github.io/<REPOSITORY_NAME>/` where `<REPOSITORY_NAME>` is the name of your repository.
+The default Quarto parameters in `index.qmd` are:
 
-If, for some reason, you cannot find the website, you can check the `Actions` tab of your repository. If the CI is running, it will show a green checkmark next to the latest commit. You can also click on the topmost `pages build and deployment`, where there should be a weblink under `deploy`. 
+```yaml
+params:
+  site: UCR
+  dataset: glasses
+```
 
-## Cleaning up after the first build
+You can adapt the document to another supported MeLiDos site by changing `params.site` in the document YAML or by passing parameters at render time.
 
-After your site is online, there are a few things you should do:
+## About Quarto
 
-- In the repo's webpage, go to the cogwheel next to `About`, and check `Use your GitHub Pages website`, then `Save changes`. This will put a handy link to your website in the repo's `About` section.
-- You can clone the repository to your local machine to edit the files in the editor of your choice.
-- In the file `_quarto.yml`, change the `title` to your liking. You should also set the URL's to the site, repo, and issues, as indicated by the comments.
-- In the file `license.md`, change the license type and the terms of the license.
-- Add information in the `about.qmd` file. This is the page that will be shown when you click on `About` in the top right corner of the website.
-- Add information in the `contributing.qmd` file. This is the page that will be shown when you click on `Contributing` in the top right corner of the website.
-- The file `index.qmd` is the main page of the website. You can edit it to your liking.
-- To learn more about Quarto websites visit <https://quarto.org/docs/websites>
-- lastly, you should remove this README file, as it is only relevant for the template. You should also remove the contents of the `assets` folder, as it is not needed for your website.
+[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system. A Quarto document (`.qmd`) can combine:
+
+- narrative text written in Markdown;
+- executable code cells, including R code;
+- generated figures and tables;
+- citations, cross-references, callouts, and other publication features;
+- multiple output formats such as HTML, PDF, Word, and websites.
+
+In this repository, Quarto is used to render `index.qmd` into a website. Rendering the document executes the R code, captures the outputs, and assembles the analysis into a navigable HTML page using the settings in `_quarto.yml`.
+
+## Clone or fork the repository
+
+### Option 1: Clone the repository
+
+Clone the repository if you want a local copy for running or editing the analysis:
+
+```bash
+git clone https://github.com/tscnlab/Zauner_tropical_light.git
+cd Zauner_tropical_light
+```
+
+If you use SSH with GitHub, you can clone with:
+
+```bash
+git clone git@github.com:tscnlab/Zauner_tropical_light.git
+cd Zauner_tropical_light
+```
+
+### Option 2: Fork the repository
+
+Fork the repository if you want your own GitHub copy before making changes:
+
+1. Open <https://github.com/tscnlab/Zauner_tropical_light> in a browser.
+2. Click **Fork** in the upper-right corner.
+3. Choose your GitHub account or organization as the destination.
+4. Clone your fork locally, replacing `<YOUR-USER>` with your GitHub username or organization:
+
+```bash
+git clone https://github.com/<YOUR-USER>/Zauner_tropical_light.git
+cd Zauner_tropical_light
+```
+
+If you plan to contribute changes back, add the original repository as an upstream remote:
+
+```bash
+git remote add upstream https://github.com/tscnlab/Zauner_tropical_light.git
+git fetch upstream
+```
+
+## Restore the R environment with renv
+
+This project uses [`renv`](https://rstudio.github.io/renv/) to make the R package environment reproducible. The `renv.lock` file records the package versions needed by the analysis.
+
+Before restoring packages, make sure you have:
+
+- R installed;
+- Quarto installed;
+- system libraries required by R packages on your operating system;
+- internet access for downloading packages the first time you restore the environment.
+
+From the repository root, start R and run:
+
+```r
+install.packages("renv") # only needed if renv is not installed yet
+renv::restore()
+```
+
+When prompted, confirm that you want to restore the project library from `renv.lock`. After restoration, the project-local package library should contain the packages needed by `index.qmd`, including `melidosData`, `LightLogR`, `tidyverse`, `gt`, `svglite`, `xml2`, and `downlit`.
+
+## Execute or render the analysis
+
+You can execute the analysis through Quarto from a terminal in the repository root.
+
+Render the full website:
+
+```bash
+quarto render
+```
+
+Render only the main document:
+
+```bash
+quarto render index.qmd
+```
+
+Render with explicit parameters, for example the default Costa Rica site and glasses dataset:
+
+```bash
+quarto render index.qmd -P site:UCR -P dataset:glasses
+```
+
+Preview the website locally while editing:
+
+```bash
+quarto preview
+```
+
+Quarto will execute the R code cells in `index.qmd`, generate figures and tables, and write the rendered site to Quarto's output directory. If rendering fails because a package is missing, re-run `renv::restore()` from R and then render again.
+
+## Typical workflow
+
+```bash
+# 1. Get the code
+git clone https://github.com/tscnlab/Zauner_tropical_light.git
+cd Zauner_tropical_light
+
+# 2. Restore packages from R
+R -e 'install.packages("renv", repos = "https://cloud.r-project.org"); renv::restore()'
+
+# 3. Render the Quarto document
+quarto render index.qmd
+```
+
+## Additional resources
+
+- Quarto documentation: <https://quarto.org/docs/>
+- Quarto websites: <https://quarto.org/docs/websites/>
+- `renv` documentation: <https://rstudio.github.io/renv/>
+- `melidosData` documentation: <https://melidosproject.github.io/melidosData/>
+- `LightLogR` documentation: <https://tscnlab.github.io/LightLogR/>
