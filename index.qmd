@@ -4,6 +4,7 @@ author:
   - name: "Johannes Zauner"
     affiliation: "Technical University of Munich, Germany"
     orcid: "0000-0003-2171-4566"
+    email: johannes.zauner@tum.de
 lightbox: true
 code-tools: true
 code-link: true
@@ -13,13 +14,12 @@ format:
     toc: true
     toc-location: left
     lightbox: true
-  typst:
-    toc: true
 params:
   site: UCR
   dataset: glasses
 citation: 
   container-title: Tropical light exposure & health seminar  
+doi: 10.5281/zenodo.20569353
 ---
 
 ## Preface
