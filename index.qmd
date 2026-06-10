@@ -381,7 +381,7 @@ gt() |>
   fmt_duration(duration, input_units = "seconds", output_units = "weeks") |> #format as duration
   tab_header("Adherence to recommendations for healthy lighting", #add a header
              subtitle = 
-               paste0(melidos_cities[[site]], melidos_countries[[site]], sep = ", ")
+               paste(melidos_cities[[site]], melidos_countries[[site]], sep = ", ")
              )
 ```
 
