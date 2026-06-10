@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.4.550">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Johannes Zauner">
-<meta name="dcterms.date" content="2026-06-06">
+<meta name="dcterms.date" content="2026-06-10">
 <title>Open science and FAIR data for personal light exposure: Seminar - Tropical light exposure &amp; health</title>
 <style>
 code{white-space: pre-wrap;}
@@ -144,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
   <li><a href="#how-this-page-works" id="toc-how-this-page-works" class="nav-link" data-scroll-target="#how-this-page-works">How this page works</a></li>
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#load-and-visualize-glasses-level-light-exposure-data-for-costa-rica" id="toc-load-and-visualize-glasses-level-light-exposure-data-for-costa-rica" class="nav-link" data-scroll-target="#load-and-visualize-glasses-level-light-exposure-data-for-costa-rica">Load and visualize glasses-level light exposure data for Costa Rica</a></li>
+  <li><a href="#load-and-visualize-chest-level-light-exposure-data-for-costa-rica" id="toc-load-and-visualize-chest-level-light-exposure-data-for-costa-rica" class="nav-link" data-scroll-target="#load-and-visualize-chest-level-light-exposure-data-for-costa-rica">Load and visualize chest-level light exposure data for Costa Rica</a></li>
   <li><a href="#calculate-common-exposure-metrics" id="toc-calculate-common-exposure-metrics" class="nav-link" data-scroll-target="#calculate-common-exposure-metrics">Calculate common exposure metrics</a></li>
   <li><a href="#load-and-merge-sleep-wake-data-with-light-exposure-data" id="toc-load-and-merge-sleep-wake-data-with-light-exposure-data" class="nav-link" data-scroll-target="#load-and-merge-sleep-wake-data-with-light-exposure-data">Load and merge sleep-wake data with light exposure data</a></li>
   <li><a href="#adherence-to-brown-et-al.-recommendations" id="toc-adherence-to-brown-et-al.-recommendations" class="nav-link" data-scroll-target="#adherence-to-brown-et-al.-recommendations">Adherence to Brown et al.&nbsp;recommendations</a></li>
@@ -180,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Last modified:</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 6, 2026</p>
+      <p class="date">June 10, 2026</p>
     </div>
   </div>
   
@@ -215,7 +215,7 @@ About this document
 <p>Wearable light loogers are used to assess personal light exposure under naturalistic conditions. However, our understanding of PLE is dominated from western, industrialized, high-income countries, and especially limited to how PLE varies in different climates. The <a href="https://github.com/MeLiDosProject">MeLiDos project</a> captured annotated, high-resolution and multi-country datasets with a harmonized protocol in Sweden, the Netherlands, Germany, Spain, Turkey, Costa Rica, and Ghana (<a href="#fig-melidos" class="quarto-xref">Figure&nbsp;1</a>).</p>
 <div id="fig-melidos" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-melidos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/tropical_light/Fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="assets/tropical_light/Fig1.png" class="img-fluid figure-img"></a>
+<a href="assets/tropical_light/Fig1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="assets/tropical_light/Fig1.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-melidos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Overview of the MeLiDos project field study
@@ -262,7 +262,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 </div>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">params</span><span class="op">$</span><span class="va">dataset</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "glasses"</code></pre>
+<pre><code>[1] "chest"</code></pre>
 </div>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">site</span> <span class="op">&lt;-</span> <span class="va">params</span><span class="op">$</span><span class="va">site</span></span>
 <span><span class="va">dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"light_"</span>, <span class="va">params</span><span class="op">$</span><span class="va">dataset</span>, <span class="st">"_1minute"</span><span class="op">)</span></span>
@@ -362,7 +362,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td>10.5281/zenodo.18925834</td>
 </tr>
 </tbody>
-</table></section><section id="load-and-visualize-glasses-level-light-exposure-data-for-costa-rica" class="level2"><h2 class="anchored" data-anchor-id="load-and-visualize-glasses-level-light-exposure-data-for-costa-rica">Load and visualize glasses-level light exposure data for Costa Rica</h2>
+</table></section><section id="load-and-visualize-chest-level-light-exposure-data-for-costa-rica" class="level2"><h2 class="anchored" data-anchor-id="load-and-visualize-chest-level-light-exposure-data-for-costa-rica">Load and visualize chest-level light exposure data for Costa Rica</h2>
 <p>The <code><a href="https://melidosproject.github.io/melidosData/reference/load_data.html">load_data()</a></code> function loads pre-processed data from the <em>MeLiDos</em> project. The <code>site</code> argument can be set to one or multiple sites. In our case, UCR loads the right data. Check above to see details about the site. To reduce data complexity, we use 1-minute aggregated data, which has also been pre-processed and cleaned.</p>
 <div class="cell">
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://melidosproject.github.io/melidosData/reference/load_data.html">load_data</a></span><span class="op">(</span><span class="va">dataset</span>, site <span class="op">=</span> <span class="va">site</span><span class="op">)</span></span>
@@ -399,23 +399,23 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <span>    <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<div id="fpivmrqrbt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fpivmrqrbt table {
+<div id="eviwylunbj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eviwylunbj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fpivmrqrbt thead, #fpivmrqrbt tbody, #fpivmrqrbt tfoot, #fpivmrqrbt tr, #fpivmrqrbt td, #fpivmrqrbt th {
+#eviwylunbj thead, #eviwylunbj tbody, #eviwylunbj tfoot, #eviwylunbj tr, #eviwylunbj td, #eviwylunbj th {
   border-style: none;
 }
 
-#fpivmrqrbt p {
+#eviwylunbj p {
   margin: 0;
   padding: 0;
 }
 
-#fpivmrqrbt .gt_table {
+#eviwylunbj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -441,12 +441,12 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-left-color: #D3D3D3;
 }
 
-#fpivmrqrbt .gt_caption {
+#eviwylunbj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fpivmrqrbt .gt_title {
+#eviwylunbj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -458,7 +458,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-width: 0;
 }
 
-#fpivmrqrbt .gt_subtitle {
+#eviwylunbj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -470,7 +470,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-top-width: 0;
 }
 
-#fpivmrqrbt .gt_heading {
+#eviwylunbj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -482,13 +482,13 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#fpivmrqrbt .gt_bottom_border {
+#eviwylunbj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fpivmrqrbt .gt_col_headings {
+#eviwylunbj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -503,7 +503,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#fpivmrqrbt .gt_col_heading {
+#eviwylunbj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -523,7 +523,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   overflow-x: hidden;
 }
 
-#fpivmrqrbt .gt_column_spanner_outer {
+#eviwylunbj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -535,15 +535,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 4px;
 }
 
-#fpivmrqrbt .gt_column_spanner_outer:first-child {
+#eviwylunbj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fpivmrqrbt .gt_column_spanner_outer:last-child {
+#eviwylunbj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fpivmrqrbt .gt_column_spanner {
+#eviwylunbj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -555,11 +555,11 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   width: 100%;
 }
 
-#fpivmrqrbt .gt_spanner_row {
+#eviwylunbj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fpivmrqrbt .gt_group_heading {
+#eviwylunbj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -585,7 +585,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   text-align: left;
 }
 
-#fpivmrqrbt .gt_empty_group_heading {
+#eviwylunbj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -600,15 +600,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   vertical-align: middle;
 }
 
-#fpivmrqrbt .gt_from_md > :first-child {
+#eviwylunbj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fpivmrqrbt .gt_from_md > :last-child {
+#eviwylunbj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fpivmrqrbt .gt_row {
+#eviwylunbj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -627,7 +627,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   overflow-x: hidden;
 }
 
-#fpivmrqrbt .gt_stub {
+#eviwylunbj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -640,7 +640,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#fpivmrqrbt .gt_stub_row_group {
+#eviwylunbj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -654,15 +654,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   vertical-align: top;
 }
 
-#fpivmrqrbt .gt_row_group_first td {
+#eviwylunbj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fpivmrqrbt .gt_row_group_first th {
+#eviwylunbj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fpivmrqrbt .gt_summary_row {
+#eviwylunbj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -672,16 +672,16 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#fpivmrqrbt .gt_first_summary_row {
+#eviwylunbj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fpivmrqrbt .gt_first_summary_row.thick {
+#eviwylunbj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fpivmrqrbt .gt_last_summary_row {
+#eviwylunbj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -691,7 +691,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#fpivmrqrbt .gt_grand_summary_row {
+#eviwylunbj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -701,7 +701,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#fpivmrqrbt .gt_first_grand_summary_row {
+#eviwylunbj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -711,7 +711,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-top-color: #D3D3D3;
 }
 
-#fpivmrqrbt .gt_last_grand_summary_row_top {
+#eviwylunbj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -721,11 +721,11 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#fpivmrqrbt .gt_striped {
+#eviwylunbj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fpivmrqrbt .gt_table_body {
+#eviwylunbj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -734,7 +734,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#fpivmrqrbt .gt_footnotes {
+#eviwylunbj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -748,7 +748,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#fpivmrqrbt .gt_footnote {
+#eviwylunbj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -757,7 +757,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#fpivmrqrbt .gt_sourcenotes {
+#eviwylunbj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -771,7 +771,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#fpivmrqrbt .gt_sourcenote {
+#eviwylunbj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -779,72 +779,72 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#fpivmrqrbt .gt_left {
+#eviwylunbj .gt_left {
   text-align: left;
 }
 
-#fpivmrqrbt .gt_center {
+#eviwylunbj .gt_center {
   text-align: center;
 }
 
-#fpivmrqrbt .gt_right {
+#eviwylunbj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fpivmrqrbt .gt_font_normal {
+#eviwylunbj .gt_font_normal {
   font-weight: normal;
 }
 
-#fpivmrqrbt .gt_font_bold {
+#eviwylunbj .gt_font_bold {
   font-weight: bold;
 }
 
-#fpivmrqrbt .gt_font_italic {
+#eviwylunbj .gt_font_italic {
   font-style: italic;
 }
 
-#fpivmrqrbt .gt_super {
+#eviwylunbj .gt_super {
   font-size: 65%;
 }
 
-#fpivmrqrbt .gt_footnote_marks {
+#eviwylunbj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fpivmrqrbt .gt_asterisk {
+#eviwylunbj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fpivmrqrbt .gt_indent_1 {
+#eviwylunbj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fpivmrqrbt .gt_indent_2 {
+#eviwylunbj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fpivmrqrbt .gt_indent_3 {
+#eviwylunbj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fpivmrqrbt .gt_indent_4 {
+#eviwylunbj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fpivmrqrbt .gt_indent_5 {
+#eviwylunbj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fpivmrqrbt .katex-display {
+#eviwylunbj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fpivmrqrbt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#eviwylunbj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -863,21 +863,21 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">Participants</td>
-<td class="gt_row gt_right" headers="mean">6</td>
+<td class="gt_row gt_right" headers="mean">39</td>
 <td class="gt_row gt_right" headers="min">—</td>
 <td class="gt_row gt_right" headers="max">—</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="name">Participant-days</td>
-<td class="gt_row gt_right" headers="mean">36</td>
+<td class="gt_row gt_right" headers="mean">235</td>
 <td class="gt_row gt_right" headers="min">6</td>
-<td class="gt_row gt_right" headers="max">6</td>
+<td class="gt_row gt_right" headers="max">7</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">Days ≥80% complete</td>
-<td class="gt_row gt_right" headers="mean">36</td>
+<td class="gt_row gt_right" headers="mean">235</td>
 <td class="gt_row gt_right" headers="min">6</td>
-<td class="gt_row gt_right" headers="max">6</td>
+<td class="gt_row gt_right" headers="max">7</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="name">Missing/Irregular</td>
@@ -929,23 +929,23 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<div id="jayawbvsuc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jayawbvsuc table {
+<div id="dlfkbpbeao" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dlfkbpbeao table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jayawbvsuc thead, #jayawbvsuc tbody, #jayawbvsuc tfoot, #jayawbvsuc tr, #jayawbvsuc td, #jayawbvsuc th {
+#dlfkbpbeao thead, #dlfkbpbeao tbody, #dlfkbpbeao tfoot, #dlfkbpbeao tr, #dlfkbpbeao td, #dlfkbpbeao th {
   border-style: none;
 }
 
-#jayawbvsuc p {
+#dlfkbpbeao p {
   margin: 0;
   padding: 0;
 }
 
-#jayawbvsuc .gt_table {
+#dlfkbpbeao .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -971,12 +971,12 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-left-color: #D3D3D3;
 }
 
-#jayawbvsuc .gt_caption {
+#dlfkbpbeao .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jayawbvsuc .gt_title {
+#dlfkbpbeao .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -988,7 +988,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-width: 0;
 }
 
-#jayawbvsuc .gt_subtitle {
+#dlfkbpbeao .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1000,7 +1000,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-top-width: 0;
 }
 
-#jayawbvsuc .gt_heading {
+#dlfkbpbeao .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1012,13 +1012,13 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#jayawbvsuc .gt_bottom_border {
+#dlfkbpbeao .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jayawbvsuc .gt_col_headings {
+#dlfkbpbeao .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1033,7 +1033,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#jayawbvsuc .gt_col_heading {
+#dlfkbpbeao .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1053,7 +1053,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   overflow-x: hidden;
 }
 
-#jayawbvsuc .gt_column_spanner_outer {
+#dlfkbpbeao .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1065,15 +1065,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 4px;
 }
 
-#jayawbvsuc .gt_column_spanner_outer:first-child {
+#dlfkbpbeao .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jayawbvsuc .gt_column_spanner_outer:last-child {
+#dlfkbpbeao .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jayawbvsuc .gt_column_spanner {
+#dlfkbpbeao .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1085,11 +1085,11 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   width: 100%;
 }
 
-#jayawbvsuc .gt_spanner_row {
+#dlfkbpbeao .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jayawbvsuc .gt_group_heading {
+#dlfkbpbeao .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1115,7 +1115,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   text-align: left;
 }
 
-#jayawbvsuc .gt_empty_group_heading {
+#dlfkbpbeao .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1130,15 +1130,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   vertical-align: middle;
 }
 
-#jayawbvsuc .gt_from_md > :first-child {
+#dlfkbpbeao .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jayawbvsuc .gt_from_md > :last-child {
+#dlfkbpbeao .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jayawbvsuc .gt_row {
+#dlfkbpbeao .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1157,7 +1157,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   overflow-x: hidden;
 }
 
-#jayawbvsuc .gt_stub {
+#dlfkbpbeao .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1170,7 +1170,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#jayawbvsuc .gt_stub_row_group {
+#dlfkbpbeao .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1184,15 +1184,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   vertical-align: top;
 }
 
-#jayawbvsuc .gt_row_group_first td {
+#dlfkbpbeao .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jayawbvsuc .gt_row_group_first th {
+#dlfkbpbeao .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jayawbvsuc .gt_summary_row {
+#dlfkbpbeao .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1202,16 +1202,16 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#jayawbvsuc .gt_first_summary_row {
+#dlfkbpbeao .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jayawbvsuc .gt_first_summary_row.thick {
+#dlfkbpbeao .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jayawbvsuc .gt_last_summary_row {
+#dlfkbpbeao .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1221,7 +1221,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#jayawbvsuc .gt_grand_summary_row {
+#dlfkbpbeao .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1231,7 +1231,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#jayawbvsuc .gt_first_grand_summary_row {
+#dlfkbpbeao .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1241,7 +1241,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-top-color: #D3D3D3;
 }
 
-#jayawbvsuc .gt_last_grand_summary_row_top {
+#dlfkbpbeao .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1251,11 +1251,11 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#jayawbvsuc .gt_striped {
+#dlfkbpbeao .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jayawbvsuc .gt_table_body {
+#dlfkbpbeao .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1264,7 +1264,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#jayawbvsuc .gt_footnotes {
+#dlfkbpbeao .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1278,7 +1278,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#jayawbvsuc .gt_footnote {
+#dlfkbpbeao .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1287,7 +1287,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#jayawbvsuc .gt_sourcenotes {
+#dlfkbpbeao .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1301,7 +1301,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#jayawbvsuc .gt_sourcenote {
+#dlfkbpbeao .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1309,72 +1309,72 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#jayawbvsuc .gt_left {
+#dlfkbpbeao .gt_left {
   text-align: left;
 }
 
-#jayawbvsuc .gt_center {
+#dlfkbpbeao .gt_center {
   text-align: center;
 }
 
-#jayawbvsuc .gt_right {
+#dlfkbpbeao .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jayawbvsuc .gt_font_normal {
+#dlfkbpbeao .gt_font_normal {
   font-weight: normal;
 }
 
-#jayawbvsuc .gt_font_bold {
+#dlfkbpbeao .gt_font_bold {
   font-weight: bold;
 }
 
-#jayawbvsuc .gt_font_italic {
+#dlfkbpbeao .gt_font_italic {
   font-style: italic;
 }
 
-#jayawbvsuc .gt_super {
+#dlfkbpbeao .gt_super {
   font-size: 65%;
 }
 
-#jayawbvsuc .gt_footnote_marks {
+#dlfkbpbeao .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jayawbvsuc .gt_asterisk {
+#dlfkbpbeao .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jayawbvsuc .gt_indent_1 {
+#dlfkbpbeao .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jayawbvsuc .gt_indent_2 {
+#dlfkbpbeao .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jayawbvsuc .gt_indent_3 {
+#dlfkbpbeao .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jayawbvsuc .gt_indent_4 {
+#dlfkbpbeao .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jayawbvsuc .gt_indent_5 {
+#dlfkbpbeao .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jayawbvsuc .katex-display {
+#dlfkbpbeao .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jayawbvsuc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dlfkbpbeao div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1401,7 +1401,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <tr class="even gt_row_group_first">
 <td id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Participants</td>
 <td class="gt_row gt_left" style="text-align: right;" headers="Overview stub_1_1 symbol">Participants</td>
-<td class="gt_row gt_right" style="text-align: left;" headers="Overview stub_1_1 mean"><strong>6</strong></td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Overview stub_1_1 mean"><strong>39</strong></td>
 <td class="gt_row gt_center" headers="Overview stub_1_1 plot"><div>
 
 </div></td>
@@ -1411,7 +1411,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Participant-days</td>
 <td class="gt_row gt_left" style="text-align: right;" headers="Overview stub_1_2 symbol">Participant-days</td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Overview stub_1_2 mean">
-<strong>36</strong> (6 - 6)</td>
+<strong>235</strong> (6 - 7)</td>
 <td class="gt_row gt_center" headers="Overview stub_1_2 plot"><div>
 
 </div></td>
@@ -1421,7 +1421,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td id="stub_1_3" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Days ≥80% complete</td>
 <td class="gt_row gt_left" style="text-align: right;" headers="Overview stub_1_3 symbol">Days ≥80% complete</td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Overview stub_1_3 mean">
-<strong>36</strong> (6 - 6)</td>
+<strong>235</strong> (6 - 7)</td>
 <td class="gt_row gt_center" headers="Overview stub_1_3 plot"><div>
 
 </div></td>
@@ -1439,8 +1439,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td id="stub_1_5" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Photoperiod</td>
 <td class="gt_row gt_left" style="text-align: right;" headers="Overview stub_1_5 symbol">Photoperiod</td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Overview stub_1_5 mean">
-<strong>13h 28m</strong> (13h 27m - 13h 28m)</td>
-<td class="gt_row gt_center" headers="Overview stub_1_5 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="45.93" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>13h 17m</strong> (12h 57m - 13h 28m)</td>
+<td class="gt_row gt_center" headers="Overview stub_1_5 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="39.11" y="7.13" width="6.81" height="6.40" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Overview stub_1_5 footnote">
 <span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span>&nbsp;</td>
 </tr>
@@ -1452,8 +1452,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td id="stub_1_6" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Dose</td>
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_6 symbol">D (lx·h)</td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_6 mean">
-<strong>3,140</strong> ±2,439 (643 - 8,572)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_6 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="11.86" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="3.22" width="6.81" height="10.31" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="7.09" width="6.81" height="6.44" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="10.95" width="6.81" height="2.58" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="9.66" width="6.81" height="3.87" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="12.24" width="6.81" height="1.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="12.24" width="6.81" height="1.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="10.95" width="6.81" height="2.58" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="10.95" width="6.81" height="2.58" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="10.95" width="6.81" height="2.58" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>9,205</strong> ±9,674 (189 - 71,715)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_6 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="3.22" width="6.81" height="10.31" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="7.23" width="6.81" height="6.30" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="11.81" width="6.81" height="1.72" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="12.10" width="6.81" height="1.43" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="12.96" width="6.81" height="0.57" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="13.24" width="6.81" height="0.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="13.39" width="6.81" height="0.14" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_6 footnote"></td>
 </tr>
 <tr class="odd">
@@ -1461,8 +1461,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_7 symbol">TAT<sub>250</sub>
 </td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_7 mean">
-<strong>1h 47m</strong> ±1h 24m (16m - 4h 56m)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_7 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="11.86" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="9.23" width="6.81" height="4.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="7.09" width="6.81" height="6.44" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="11.38" width="6.81" height="2.15" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="11.38" width="6.81" height="2.15" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="12.46" width="6.81" height="1.07" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="9.23" width="6.81" height="4.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="12.46" width="6.81" height="1.07" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="12.46" width="6.81" height="1.07" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>3h 4m</strong> ±2h 14m (0s - 9h 19m)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_7 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="4.94" width="6.81" height="8.59" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="1.30" width="6.81" height="12.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="2.30" width="6.81" height="11.23" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="3.29" width="6.81" height="10.24" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="6.26" width="6.81" height="7.27" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="7.25" width="6.81" height="6.28" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="9.56" width="6.81" height="3.96" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="11.88" width="6.81" height="1.65" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="10.89" width="6.81" height="2.64" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="12.87" width="6.81" height="0.66" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_7 footnote"></td>
 </tr>
 <tr class="even">
@@ -1470,8 +1470,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_8 symbol">TWT<sub>1-10</sub>
 </td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_8 mean">
-<strong>3h 15m</strong> ±1h 32m (47m - 8h 33m)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_8 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="11.86" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="8.16" width="6.81" height="5.37" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="7.09" width="6.81" height="6.44" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="6.01" width="6.81" height="7.52" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="12.46" width="6.81" height="1.07" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="12.46" width="6.81" height="1.07" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="12.46" width="6.81" height="1.07" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>2h 53m</strong> ±1h 51m (3m - 10h 30m)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_8 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="12.54" width="6.81" height="0.99" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="2.63" width="6.81" height="10.90" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="3.42" width="6.81" height="10.11" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="9.37" width="6.81" height="4.16" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="9.96" width="6.81" height="3.57" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="11.35" width="6.81" height="2.18" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="12.74" width="6.81" height="0.79" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.33" width="6.81" height="0.20" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="12.93" width="6.81" height="0.59" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="13.33" width="6.81" height="0.20" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_8 footnote"></td>
 </tr>
 <tr class="odd">
@@ -1479,8 +1479,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_9 symbol">TBT<sub>1</sub>
 </td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_9 mean">
-<strong>9h 53m</strong> ±2h 40m (1h 47m - 16h 38m)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_9 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="11.86" y="12.36" width="6.81" height="1.17" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="10.01" width="6.81" height="3.51" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="2.99" width="6.81" height="10.54" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="6.50" width="6.81" height="7.03" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="7.67" width="6.81" height="5.86" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="12.36" width="6.81" height="1.17" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>9h 44m</strong> ±2h 35m (2h - 21h 29m)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_9 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="11.86" y="13.38" width="6.81" height="0.15" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="13.07" width="6.81" height="0.45" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="8.53" width="6.81" height="5.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="2.16" width="6.81" height="11.37" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="9.89" width="6.81" height="3.64" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="12.16" width="6.81" height="1.36" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.23" width="6.81" height="0.30" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="13.38" width="6.81" height="0.15" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="13.23" width="6.81" height="0.30" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_9 footnote"></td>
 </tr>
 <tr class="even">
@@ -1488,8 +1488,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_10 symbol">PAT<sub>250</sub>
 </td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_10 mean">
-<strong>31m 46s</strong> ±21m 52s (3m - 1h 29m)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_10 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="11.92" width="6.81" height="1.61" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="5.48" width="6.81" height="8.05" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="2.25" width="6.81" height="11.27" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="3.87" width="6.81" height="9.66" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="11.92" width="6.81" height="1.61" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="11.92" width="6.81" height="1.61" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="11.92" width="6.81" height="1.61" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>53m 10s</strong> ±46m 46s (0s - 4h 48m)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_10 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="6.41" width="6.81" height="7.12" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="3.70" width="6.81" height="9.83" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="7.76" width="6.81" height="5.76" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="12.00" width="6.81" height="1.53" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="12.00" width="6.81" height="1.53" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="13.19" width="6.81" height="0.34" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="13.36" width="6.81" height="0.17" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.36" width="6.81" height="0.17" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="13.19" width="6.81" height="0.34" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="13.36" width="6.81" height="0.17" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_10 footnote"></td>
 </tr>
 <tr class="odd">
@@ -1497,8 +1497,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_11 symbol">TAT<sub>1000</sub>
 </td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_11 mean">
-<strong>36m 5s</strong> ±36m 53s (0s - 1h 58m)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_11 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="2.25" width="6.81" height="11.27" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="2.25" width="6.81" height="11.27" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="11.92" width="6.81" height="1.61" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="8.70" width="6.81" height="4.83" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>1h 23m</strong> ±1h 21m (0s - 6h 37m)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_11 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="1.08" width="6.81" height="12.45" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="4.36" width="6.81" height="9.17" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="6.76" width="6.81" height="6.77" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="9.82" width="6.81" height="3.71" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="10.69" width="6.81" height="2.84" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="12.66" width="6.81" height="0.87" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="12.22" width="6.81" height="1.31" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.31" width="6.81" height="0.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="13.09" width="6.81" height="0.44" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="12.87" width="6.81" height="0.66" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_11 footnote"></td>
 </tr>
 <tr class="even">
@@ -1506,8 +1506,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_12 symbol">FLiT<sub>250</sub>
 </td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_12 mean">
-<strong>08:33</strong> ±01:35 (06:06 - 11:57)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_12 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="25.48" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="5.80" width="6.81" height="7.73" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="10.95" width="6.81" height="2.58" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>07:55</strong> ±02:03 (00:04 - 14:36)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_12 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="13.01" width="6.81" height="0.52" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="13.43" width="6.81" height="0.10" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="11.76" width="6.81" height="1.77" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="5.94" width="6.81" height="7.59" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="12.28" width="6.81" height="1.25" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="13.32" width="6.81" height="0.21" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_12 footnote">
 <span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span>&nbsp;</td>
 </tr>
@@ -1516,8 +1516,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_13 symbol">MLiT<sub>250</sub>
 </td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_13 mean">
-<strong>11:23</strong> ±01:38 (08:27 - 14:04)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_13 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="32.30" y="3.51" width="6.81" height="10.02" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="10.67" width="6.81" height="2.86" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>12:02</strong> ±01:27 (06:29 - 16:50)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_13 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="25.48" y="13.26" width="6.81" height="0.27" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="9.99" width="6.81" height="3.54" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="9.17" width="6.81" height="4.36" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="13.35" width="6.81" height="0.18" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_13 footnote">
 <span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span>&nbsp;</td>
 </tr>
@@ -1526,8 +1526,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_14 symbol">LLiT<sub>250</sub>
 </td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_14 mean">
-<strong>15:20</strong> ±03:05 (10:21 - 23:51)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_14 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="32.30" y="12.46" width="6.81" height="1.07" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="3.87" width="6.81" height="9.66" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="2.79" width="6.81" height="10.74" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="12.46" width="6.81" height="1.07" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>16:59</strong> ±02:29 (07:45 - 23:51)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_14 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="25.48" y="13.43" width="6.81" height="0.096" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="13.24" width="6.81" height="0.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="12.38" width="6.81" height="1.15" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="10.36" width="6.81" height="3.17" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="10.74" width="6.81" height="2.79" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="11.89" width="6.81" height="1.63" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="13.05" width="6.81" height="0.48" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_14 footnote">
 <span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span>&nbsp;</td>
 </tr>
@@ -1536,8 +1536,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_15 symbol">M10<sub>midpoint</sub>
 </td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_15 mean">
-<strong>12:47</strong> ±01:47 (09:38 - 18:47)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_15 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="32.30" y="10.95" width="6.81" height="2.58" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="7.09" width="6.81" height="6.44" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="12.88" width="6.81" height="0.64" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="12.88" width="6.81" height="0.64" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>12:55</strong> ±01:55 (04:59 - 18:59)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_15 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="18.67" y="13.34" width="6.81" height="0.19" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="13.43" width="6.81" height="0.094" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="12.68" width="6.81" height="0.85" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="7.32" width="6.81" height="6.21" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="11.93" width="6.81" height="1.60" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.25" width="6.81" height="0.28" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_15 footnote">
 <span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span>&nbsp;</td>
 </tr>
@@ -1546,8 +1546,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_16 symbol">L5<sub>midpoint</sub>
 </td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_16 mean">
-<strong>03:18</strong> ±03:08 (02:29 - 21:04)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_16 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="11.86" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="12.28" width="6.81" height="1.25" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="13.11" width="6.81" height="0.42" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="13.11" width="6.81" height="0.42" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>03:13</strong> ±03:18 (00:07 - 23:55)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_16 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="13.34" width="6.81" height="0.18" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="12.67" width="6.81" height="0.86" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="13.41" width="6.81" height="0.12" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="13.47" width="6.81" height="0.061" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="13.22" width="6.81" height="0.31" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_16 footnote">
 <span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span>&nbsp;</td>
 </tr>
@@ -1556,8 +1556,8 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 </td>
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_17 symbol">M10<sub>mean</sub> (lx)</td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_17 mean">
-<strong>71.2</strong> ±56.2 (3.1 - 193.6)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_17 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="12.10" width="6.81" height="1.43" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="4.94" width="6.81" height="8.59" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="4.94" width="6.81" height="8.59" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="9.23" width="6.81" height="4.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="9.23" width="6.81" height="4.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="10.67" width="6.81" height="2.86" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="12.10" width="6.81" height="1.43" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="9.23" width="6.81" height="4.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="10.67" width="6.81" height="2.86" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>144.1</strong> ±178.5 (0.1 - 1,274.6)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_17 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="2.14" width="6.81" height="11.39" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="9.60" width="6.81" height="3.93" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="11.22" width="6.81" height="2.31" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="12.99" width="6.81" height="0.54" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="13.26" width="6.81" height="0.27" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.26" width="6.81" height="0.27" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="13.39" width="6.81" height="0.14" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="13.39" width="6.81" height="0.14" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_17 footnote"></td>
 </tr>
 <tr class="even">
@@ -1565,24 +1565,24 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 </td>
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_18 symbol">L5<sub>mean</sub> (lx)</td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_18 mean">
-<strong>0.1</strong> ±0.4 (0.0 - 2.1)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_18 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="13.15" width="6.81" height="0.38" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="13.15" width="6.81" height="0.38" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>0.0</strong> ±0.1 (0.0 - 1.5)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_18 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="5.04" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="11.86" y="13.07" width="6.81" height="0.46" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="18.67" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="25.48" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="13.47" width="6.81" height="0.057" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_18 footnote"></td>
 </tr>
 <tr class="odd">
 <td id="stub_1_19" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Interdaily stability</td>
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_19 symbol">IS</td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_19 mean">
-<strong>0.302</strong> ±0.087 (0.207 - 0.431)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_19 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="39.11" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="7.09" width="6.81" height="6.44" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="13.53" width="6.81" height="0.00" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="7.09" width="6.81" height="6.44" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>0.293</strong> ±0.070 (0.158 - 0.452)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_19 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="25.48" y="11.92" width="6.81" height="1.61" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="8.70" width="6.81" height="4.83" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="2.25" width="6.81" height="11.27" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_19 footnote"></td>
 </tr>
 <tr class="even">
 <td id="stub_1_20" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Intradaily variability</td>
 <td class="gt_row gt_left" style="text-align: right;" headers="Metrics stub_1_20 symbol">IV</td>
 <td class="gt_row gt_right" style="text-align: left;" headers="Metrics stub_1_20 mean">
-<strong>1.379</strong> ±0.140 (1.155 - 1.580)</td>
-<td class="gt_row gt_center" headers="Metrics stub_1_20 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="52.74" y="9.23" width="6.81" height="4.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="9.23" width="6.81" height="4.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="9.23" width="6.81" height="4.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
+<strong>1.223</strong> ±0.310 (0.495 - 1.894)</td>
+<td class="gt_row gt_center" headers="Metrics stub_1_20 plot"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17"><g class="svglite"><defs><style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3"><rect x="0.00" y="0.00" width="85.04" height="14.17"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)"><rect x="0.00" y="0.0000000000000018" width="85.04" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="25.48" y="12.46" width="6.81" height="1.07" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="32.30" y="11.38" width="6.81" height="2.15" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="39.11" y="6.01" width="6.81" height="7.52" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="45.93" y="0.64" width="6.81" height="12.88" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="52.74" y="4.94" width="6.81" height="8.59" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="59.55" y="10.31" width="6.81" height="3.22" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="66.37" y="9.23" width="6.81" height="4.29" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect><rect x="73.18" y="11.38" width="6.81" height="2.15" style="stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;"></rect></g></g></svg></td>
 <td class="gt_row gt_right" headers="Metrics stub_1_20 footnote"></td>
 </tr>
 </tbody>
@@ -1596,7 +1596,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 </tr>
 <tr class="even gt_footnotes">
 <td colspan="5" class="gt_footnote">
-<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span> Metrics are calculated on a by-participant-day basis (n=36) with the exception of IV and IS, which are calculated on a by-participant basis (n=6).</td>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span> Metrics are calculated on a by-participant-day basis (n=235) with the exception of IV and IS, which are calculated on a by-participant basis (n=39).</td>
 </tr>
 <tr class="odd gt_footnotes">
 <td colspan="5" class="gt_footnote">
@@ -1808,12 +1808,12 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <span><span class="va">adherence_summary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 4
-  State.Brown adherence duration               of.total
-  &lt;chr&gt;           &lt;dbl&gt; &lt;Duration&gt;                &lt;dbl&gt;
-1 pre-sleep       0.640 306600s (~3.55 days)     0.0986
-2 sleep           0.875 957900s (~1.58 weeks)    0.308 
-3 wake            0.157 1416660s (~2.34 weeks)   0.455 
-4 &lt;NA&gt;           NA     429240s (~4.97 days)     0.138 </code></pre>
+  State.Brown adherence duration                 of.total
+  &lt;chr&gt;           &lt;dbl&gt; &lt;Duration&gt;                  &lt;dbl&gt;
+1 pre-sleep       0.635 2336640s (~3.86 weeks)     0.115 
+2 sleep           0.918 6129780s (~10.14 weeks)    0.302 
+3 wake            0.239 10379340s (~17.16 weeks)   0.511 
+4 &lt;NA&gt;           NA     1458240s (~2.41 weeks)     0.0718</code></pre>
 </div>
 </div>
 <p>…and add a summary row</p>
@@ -1832,13 +1832,13 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <span><span class="va">adherence_summary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
-  State.Brown adherence duration               of.total
-  &lt;chr&gt;           &lt;dbl&gt; &lt;Duration&gt;                &lt;dbl&gt;
-1 Overall         0.469 2681160s (~4.43 weeks)   0.862 
-2 pre-sleep       0.640 306600s (~3.55 days)     0.0986
-3 sleep           0.875 957900s (~1.58 weeks)    0.308 
-4 wake            0.157 1416660s (~2.34 weeks)   0.455 
-5 &lt;NA&gt;           NA     429240s (~4.97 days)     0.138 </code></pre>
+  State.Brown adherence duration                 of.total
+  &lt;chr&gt;           &lt;dbl&gt; &lt;Duration&gt;                  &lt;dbl&gt;
+1 Overall         0.509 18845760s (~31.16 weeks)   0.928 
+2 pre-sleep       0.635 2336640s (~3.86 weeks)     0.115 
+3 sleep           0.918 6129780s (~10.14 weeks)    0.302 
+4 wake            0.239 10379340s (~17.16 weeks)   0.511 
+5 &lt;NA&gt;           NA     1458240s (~2.41 weeks)     0.0718</code></pre>
 </div>
 </div>
 <p>In the final step, we bring this table into a nice layout.</p>
@@ -1863,23 +1863,23 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <span>             <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<div id="mfzpgzcjqh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mfzpgzcjqh table {
+<div id="rofnhkfxxg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rofnhkfxxg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mfzpgzcjqh thead, #mfzpgzcjqh tbody, #mfzpgzcjqh tfoot, #mfzpgzcjqh tr, #mfzpgzcjqh td, #mfzpgzcjqh th {
+#rofnhkfxxg thead, #rofnhkfxxg tbody, #rofnhkfxxg tfoot, #rofnhkfxxg tr, #rofnhkfxxg td, #rofnhkfxxg th {
   border-style: none;
 }
 
-#mfzpgzcjqh p {
+#rofnhkfxxg p {
   margin: 0;
   padding: 0;
 }
 
-#mfzpgzcjqh .gt_table {
+#rofnhkfxxg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1905,12 +1905,12 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-left-color: #D3D3D3;
 }
 
-#mfzpgzcjqh .gt_caption {
+#rofnhkfxxg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mfzpgzcjqh .gt_title {
+#rofnhkfxxg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1922,7 +1922,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-width: 0;
 }
 
-#mfzpgzcjqh .gt_subtitle {
+#rofnhkfxxg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1934,7 +1934,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-top-width: 0;
 }
 
-#mfzpgzcjqh .gt_heading {
+#rofnhkfxxg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1946,13 +1946,13 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#mfzpgzcjqh .gt_bottom_border {
+#rofnhkfxxg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mfzpgzcjqh .gt_col_headings {
+#rofnhkfxxg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1967,7 +1967,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#mfzpgzcjqh .gt_col_heading {
+#rofnhkfxxg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1987,7 +1987,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   overflow-x: hidden;
 }
 
-#mfzpgzcjqh .gt_column_spanner_outer {
+#rofnhkfxxg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1999,15 +1999,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 4px;
 }
 
-#mfzpgzcjqh .gt_column_spanner_outer:first-child {
+#rofnhkfxxg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mfzpgzcjqh .gt_column_spanner_outer:last-child {
+#rofnhkfxxg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mfzpgzcjqh .gt_column_spanner {
+#rofnhkfxxg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2019,11 +2019,11 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   width: 100%;
 }
 
-#mfzpgzcjqh .gt_spanner_row {
+#rofnhkfxxg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mfzpgzcjqh .gt_group_heading {
+#rofnhkfxxg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2049,7 +2049,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   text-align: left;
 }
 
-#mfzpgzcjqh .gt_empty_group_heading {
+#rofnhkfxxg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2064,15 +2064,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   vertical-align: middle;
 }
 
-#mfzpgzcjqh .gt_from_md > :first-child {
+#rofnhkfxxg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mfzpgzcjqh .gt_from_md > :last-child {
+#rofnhkfxxg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mfzpgzcjqh .gt_row {
+#rofnhkfxxg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2091,7 +2091,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   overflow-x: hidden;
 }
 
-#mfzpgzcjqh .gt_stub {
+#rofnhkfxxg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2104,7 +2104,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#mfzpgzcjqh .gt_stub_row_group {
+#rofnhkfxxg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2118,15 +2118,15 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   vertical-align: top;
 }
 
-#mfzpgzcjqh .gt_row_group_first td {
+#rofnhkfxxg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mfzpgzcjqh .gt_row_group_first th {
+#rofnhkfxxg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mfzpgzcjqh .gt_summary_row {
+#rofnhkfxxg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2136,16 +2136,16 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#mfzpgzcjqh .gt_first_summary_row {
+#rofnhkfxxg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mfzpgzcjqh .gt_first_summary_row.thick {
+#rofnhkfxxg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mfzpgzcjqh .gt_last_summary_row {
+#rofnhkfxxg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2155,7 +2155,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#mfzpgzcjqh .gt_grand_summary_row {
+#rofnhkfxxg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2165,7 +2165,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#mfzpgzcjqh .gt_first_grand_summary_row {
+#rofnhkfxxg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2175,7 +2175,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-top-color: #D3D3D3;
 }
 
-#mfzpgzcjqh .gt_last_grand_summary_row_top {
+#rofnhkfxxg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2185,11 +2185,11 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#mfzpgzcjqh .gt_striped {
+#rofnhkfxxg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mfzpgzcjqh .gt_table_body {
+#rofnhkfxxg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2198,7 +2198,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-bottom-color: #D3D3D3;
 }
 
-#mfzpgzcjqh .gt_footnotes {
+#rofnhkfxxg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2212,7 +2212,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#mfzpgzcjqh .gt_footnote {
+#rofnhkfxxg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2221,7 +2221,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#mfzpgzcjqh .gt_sourcenotes {
+#rofnhkfxxg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2235,7 +2235,7 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   border-right-color: #D3D3D3;
 }
 
-#mfzpgzcjqh .gt_sourcenote {
+#rofnhkfxxg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2243,72 +2243,72 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
   padding-right: 5px;
 }
 
-#mfzpgzcjqh .gt_left {
+#rofnhkfxxg .gt_left {
   text-align: left;
 }
 
-#mfzpgzcjqh .gt_center {
+#rofnhkfxxg .gt_center {
   text-align: center;
 }
 
-#mfzpgzcjqh .gt_right {
+#rofnhkfxxg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mfzpgzcjqh .gt_font_normal {
+#rofnhkfxxg .gt_font_normal {
   font-weight: normal;
 }
 
-#mfzpgzcjqh .gt_font_bold {
+#rofnhkfxxg .gt_font_bold {
   font-weight: bold;
 }
 
-#mfzpgzcjqh .gt_font_italic {
+#rofnhkfxxg .gt_font_italic {
   font-style: italic;
 }
 
-#mfzpgzcjqh .gt_super {
+#rofnhkfxxg .gt_super {
   font-size: 65%;
 }
 
-#mfzpgzcjqh .gt_footnote_marks {
+#rofnhkfxxg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mfzpgzcjqh .gt_asterisk {
+#rofnhkfxxg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mfzpgzcjqh .gt_indent_1 {
+#rofnhkfxxg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mfzpgzcjqh .gt_indent_2 {
+#rofnhkfxxg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mfzpgzcjqh .gt_indent_3 {
+#rofnhkfxxg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mfzpgzcjqh .gt_indent_4 {
+#rofnhkfxxg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mfzpgzcjqh .gt_indent_5 {
+#rofnhkfxxg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mfzpgzcjqh .katex-display {
+#rofnhkfxxg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mfzpgzcjqh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rofnhkfxxg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2330,33 +2330,33 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="State.Brown" style="font-weight: bold; background-color: #D3D3D3">Overall</td>
-<td class="gt_row gt_right" headers="adherence" style="background-color: #D3D3D3">46.9%</td>
-<td class="gt_row gt_center" headers="duration" style="background-color: #D3D3D3">4w</td>
-<td class="gt_row gt_right" headers="of.total" style="background-color: #D3D3D3">86.2%</td>
+<td class="gt_row gt_right" headers="adherence" style="background-color: #D3D3D3">50.9%</td>
+<td class="gt_row gt_center" headers="duration" style="background-color: #D3D3D3">31w</td>
+<td class="gt_row gt_right" headers="of.total" style="background-color: #D3D3D3">92.8%</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="State.Brown" style="font-weight: bold">pre-sleep</td>
-<td class="gt_row gt_right" headers="adherence">64.0%</td>
-<td class="gt_row gt_center" headers="duration">&lt;1w</td>
-<td class="gt_row gt_right" headers="of.total">9.9%</td>
+<td class="gt_row gt_right" headers="adherence">63.5%</td>
+<td class="gt_row gt_center" headers="duration">3w</td>
+<td class="gt_row gt_right" headers="of.total">11.5%</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="State.Brown" style="font-weight: bold">sleep</td>
-<td class="gt_row gt_right" headers="adherence">87.5%</td>
-<td class="gt_row gt_center" headers="duration">1w</td>
-<td class="gt_row gt_right" headers="of.total">30.8%</td>
+<td class="gt_row gt_right" headers="adherence">91.8%</td>
+<td class="gt_row gt_center" headers="duration">10w</td>
+<td class="gt_row gt_right" headers="of.total">30.2%</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="State.Brown" style="font-weight: bold">wake</td>
-<td class="gt_row gt_right" headers="adherence">15.7%</td>
-<td class="gt_row gt_center" headers="duration">2w</td>
-<td class="gt_row gt_right" headers="of.total">45.5%</td>
+<td class="gt_row gt_right" headers="adherence">23.9%</td>
+<td class="gt_row gt_center" headers="duration">17w</td>
+<td class="gt_row gt_right" headers="of.total">51.1%</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="State.Brown" style="font-weight: bold">Unkown</td>
 <td class="gt_row gt_right" headers="adherence">Unkown</td>
-<td class="gt_row gt_center" headers="duration">&lt;1w</td>
-<td class="gt_row gt_right" headers="of.total">13.8%</td>
+<td class="gt_row gt_center" headers="duration">2w</td>
+<td class="gt_row gt_right" headers="of.total">7.2%</td>
 </tr>
 </tbody>
 </table>
@@ -2368,19 +2368,22 @@ Figure&nbsp;1: Overview of the MeLiDos project field study
 <div class="cell">
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.5.0 (2025-04-11)
-Platform: aarch64-apple-darwin20
-Running under: macOS 26.5.1
+<pre><code>R version 4.6.0 (2026-04-24)
+Platform: x86_64-pc-linux-gnu
+Running under: Ubuntu 24.04.4 LTS
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib 
-LAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.26.so;  LAPACK version 3.12.0
 
 locale:
-[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
 
-time zone: Europe/Berlin
-tzcode source: internal
+time zone: UTC
+tzcode source: system (glibc)
 
 attached base packages:
 [1] stats     graphics  grDevices datasets  utils     methods   base     
@@ -2393,23 +2396,23 @@ other attached packages:
 
 loaded via a namespace (and not attached):
  [1] gtable_0.3.6       xfun_0.57          htmlwidgets_1.6.4  paletteer_1.6.0   
- [5] tzdb_0.5.0         vctrs_0.7.3        tools_4.5.0        generics_0.1.4    
+ [5] tzdb_0.5.0         vctrs_0.7.3        tools_4.6.0        generics_0.1.4    
  [9] proxy_0.4-29       pkgconfig_2.0.3    KernSmooth_2.23-26 RColorBrewer_1.1-3
-[13] S7_0.2.2           lifecycle_1.0.5    compiler_4.5.0     farver_2.1.2      
+[13] S7_0.2.2           lifecycle_1.0.5    compiler_4.6.0     farver_2.1.2      
 [17] suntools_1.0.1     textshaping_1.0.1  fontawesome_0.5.3  ggsci_3.2.0       
 [21] litedown_0.7       class_7.3-23       htmltools_0.5.9    sass_0.4.10       
 [25] yaml_2.3.12        pillar_1.11.1      gtExtras_0.6.0     classInt_0.4-11   
 [29] cachem_1.1.0       commonmark_2.0.0   tidyselect_1.2.1   digest_0.6.39     
 [33] stringi_1.8.7      rematch2_2.1.2     sf_1.0-21          labeling_0.4.3    
-[37] cowplot_1.2.0      fastmap_1.2.0      grid_4.5.0         cli_3.6.6         
+[37] cowplot_1.2.0      fastmap_1.2.0      grid_4.6.0         cli_3.6.6         
 [41] magrittr_2.0.5     base64enc_0.1-6    utf8_1.2.6         e1071_1.7-16      
 [45] withr_3.0.2        scales_1.4.0       warp_0.2.3         timechange_0.4.0  
 [49] slider_0.3.2       rmarkdown_2.29     otel_0.2.0         ggtext_0.1.2      
 [53] ragg_1.5.0         hms_1.1.3          memoise_2.0.1      evaluate_1.0.4    
 [57] knitr_1.50         markdown_2.0       rlang_1.2.0        gridtext_0.1.5    
 [61] Rcpp_1.1.1-1.1     glue_1.8.1         DBI_1.3.0          renv_1.2.3        
-[65] rstudioapi_0.17.1  jsonlite_2.0.0     R6_2.6.1           units_0.8-7       
-[69] systemfonts_1.3.1  fs_1.6.6          </code></pre>
+[65] jsonlite_2.0.0     R6_2.6.1           units_0.8-7        systemfonts_1.3.1 
+[69] fs_1.6.6          </code></pre>
 </div>
 </div>
 
@@ -2426,14 +2429,14 @@ loaded via a namespace (and not attached):
 </ol></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{zauner2026,
   author = {Zauner, Johannes},
   title = {Tropical Light Exposure \&amp; Health},
-  date = {2026-06-06},
+  date = {2026-06-10},
   url = {https://tscnlab.github.io/Zauner_tropical_light//},
   doi = {10.5281/zenodo.20569353},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-zauner2026" class="csl-entry quarto-appendix-citeas" role="listitem">
 Zauner, Johannes. 2026. <span>“Tropical Light Exposure &amp;
-Health.”</span> Tropical Light Exposure &amp; Health Seminar. June 6,
+Health.”</span> Tropical Light Exposure &amp; Health Seminar. June 10,
 2026. <a href="https://doi.org/10.5281/zenodo.20569353">https://doi.org/10.5281/zenodo.20569353</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -2891,7 +2894,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a><span class="co">    lightbox: true</span></span>
 <span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="an">params:</span></span>
 <span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="co">  site: UCR</span></span>
-<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a><span class="co">  dataset: glasses</span></span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a><span class="co">  dataset: chest</span></span>
 <span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span><span class="co"> </span></span>
 <span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a><span class="co">  container-title: Tropical light exposure &amp; health seminar  </span></span>
 <span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a><span class="an">doi:</span><span class="co"> 10.5281/zenodo.20569353</span></span>
@@ -3261,7 +3264,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tscnlab/Zauner_tropical_light/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tscnlab/Zauner_tropical_light/issues" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tscnlab/Zauner_tropical_light/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tscnlab/Zauner_tropical_light/issues" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
