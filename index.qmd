@@ -16,7 +16,7 @@ format:
     lightbox: true
 params:
   site: UCR
-  dataset: glasses
+  dataset: chest
 citation: 
   container-title: Tropical light exposure & health seminar  
 doi: 10.5281/zenodo.20569353
