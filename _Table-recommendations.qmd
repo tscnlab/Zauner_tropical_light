@@ -1,5 +1,6 @@
 ---
 title: "Tropical light exposure & health"
+subtitle: "Abbreviated version"
 author: 
   - name: "Johannes Zauner"
     affiliation: "Technical University of Munich, Germany"
@@ -43,8 +44,6 @@ Wearable light loogers are used to assess personal light exposure under naturali
 This document uses the [melidosData](https://melidosproject.github.io/melidosData/) R package to load and analyze MeLiDos study data for the `Costa Rica` site. The document has the following goals:
 
 - load wearable data for `Costa Rica`
-- create plots to gain an understanding of exposure patterns
-- calculate common exposure metrics
 - load sleep-wake data for the same dataset
 - merge sleep-wake data with PLE data
 - calculate, summarize, and visualize adherence to recommendations for PLE
@@ -118,7 +117,7 @@ Want to use a different site? Just switch the Institution name in the code cell 
 
 : Overview of the available sites in the package
 
-## Load and visualize `r params$dataset`-level light exposure data for `r melidos_countries[[site]]`
+## Load `r params$dataset`-level light exposure data for `r melidos_countries[[site]]`
 
 The `load_data()` function loads pre-processed data from the *MeLiDos* project. The `site` argument can be set to one or multiple sites. In our case, `r site` loads the right data. Check above to see details about the site. To reduce data complexity, we use 1-minute aggregated data, which has also been pre-processed and cleaned. 
 
@@ -128,59 +127,6 @@ names(data)
 #if no internet connection is available:
 # load("data/light_chest_1minute.RData")
 # data <- light_chest_1min
-```
-
-We can explore this dataset in several, low-effort ways.
-
-```{r}
-#| fig-width: 5
-#| fig-height: 4
-data |> 
-  gg_overview() + #create the overview plot
-  theme_sub_axis_y(text = element_blank()) #remove y-axis text
-```
-
-```{r}
-data |> 
-  summary_overview() |> #calculate overview stats
-  gt() |> sub_missing() |>  #show as table
-  tab_header(
-    paste0("Dataset overview for ", 
-           melidos_cities[[site]], ", ", 
-           melidos_countries[[site]])
-    )
-```
-
-```{r}
-#| fig-width: 8
-#| fig-height: 7
-data |> 
-  sample_groups(5) |> #select 5 groups (participants)
-  aggregate_Datetime("15 mins", type = "floor") |> #condense data to 15-minute intervals
-  gg_days() |>  #create timeline plot
-  gg_photoperiod(melidos_coordinates[[site]]) #add photoperiod information
-```
-
-```{r}
-data |> 
-  ungroup() |> #remove by-participant grouping
-  aggregate_Date(unit = "15 mins") |> #condense data to 1 day of 15-minute intervals
-  gg_doubleplot(fill = melidos_colors[[site]]) |> #create double plot
-  gg_photoperiod(melidos_coordinates[[site]]) #add photoperiod information
-```
-
-## Calculate common exposure metrics
-
-`LightLogR` has a summary function that calculates many common metrics and shows how they are distributed within the dataset.
-
-```{r}
-data |> 
-  summary_table( #summary table function
-    melidos_coordinates[[site]], #provide coordinates for photoperiod calculation
-    location = melidos_cities[[site]], #provide a label for location
-    site = melidos_countries[[site]], #provide a label for site
-    color = melidos_colors[[site]] #provide a color for histogram generation
-  )
 ```
 
 ## Load and merge sleep-wake data with light exposure data
@@ -194,13 +140,6 @@ wearlog <- load_data("wearlog", site = site)
 # load("data/sleepdiaries.RData")
 # sleepdata <- sleepdiary
 # load("data/wearlog.RData")
-```
-
-We can quickly check what information is available in both datasets with the `extract_labels()` function.
-
-```{r}
-sleepdata |> extract_labels() |> head()
-wearlog |> extract_labels() |> head()
 ```
 
 In the next step, we prepare the sleepdiary data by selecting a subset containing the participant `ID`, as well as the time when participants prepared to sleep (`sleepprep`) and when the woke (`wake`). Because we are not only interested in labelling sleep periods, but also the in-between wake periods, we pivot the data to a longer form and transform them to intervals. Based on those sleep and wake intervals, we assign states according to Brown et al. (day, evening, night).
@@ -245,25 +184,6 @@ data |>
   )
 ```
 
-We can visualize this combined dataset by stacking several of the previous functions and adding the state information on top.
-
-```{r}
-#| fig-width: 10
-#| fig-height: 5
-data |> 
-  sample_groups(3) |> #select three participants
-  aggregate_Datetime("15 mins", type = "floor") |> #aggregate to 15-minute bins
-  mutate(State.Brown = #order factor labels (for coloring)
-           factor(State.Brown, levels = c("wake", "pre-sleep", "sleep"))) |> 
-  gg_days() |> #create base-plot
-  gg_photoperiod() |> #add photoperiod information
-  gg_states(State.Brown, #add state information
-            aes_fill = State.Brown, #fill by state
-            ymax = 0, alpha = 1 #only create a small band
-            ) +
-  labs(fill = "State") # adjust legend label
-```
-
 ## Adherence to Brown et al. recommendations
 
 The first step is to check whether the melanopic EDI were satisfactory at a given moment through the `Brown2reference()` function.
@@ -278,53 +198,6 @@ names(data)
 ```
 
 Based on the previous figure, we can add information on whether a given timepoint was adherent to the recommendations.
-
-```{r}
-#| fig-width: 10
-#| fig-height: 5
-data |> 
-  sample_groups(3) |> #sample 3 groups
-  aggregate_Datetime("15 mins", type = "floor") |> #15-minute intervals
-  mutate(State.Brown = #create a factor and add an Unknown type
-           factor(State.Brown |> replace_na("Unknown"), 
-                  levels = c("wake", "pre-sleep", "sleep", "Unknown")),
-         Reference.check = recode_values( #set names for adherence
-           Reference.check |> as.character(),
-           "TRUE" ~ "Good",
-           "FALSE" ~ "Bad",
-           default = "Unknown"
-         )) |> 
-  gg_days( #create the base plot
-    jco_color = FALSE, #do not use default fill scale
-    geom = "ribbon", #use a ribbon geom
-    aes_fill = State.Brown, #fill the ribbon by state
-    group = consecutive_id(State.Brown) #group those fills by occurances of state
-  ) |> 
-  gg_photoperiod() |> #add photoperiod
-  gg_states(Reference.check, #add state information of adherance
-            aes_fill = Reference.check, #fill by adherence
-            ymax = 0, alpha = 1, #only a small band
-            on.top = TRUE, #put band on top
-            ) +
-  geom_line() + #add a line on top of everything
-  labs(fill = "State") + #adjust legend label
-  scale_fill_manual(values = c(wake = "skyblue3", `pre-sleep` = "gold", 
-                               sleep = "grey", Bad = "red", Good = "green3", 
-                               Unknown = "white")) #manual scale
-```
-
-We can also highlight when in the day recommendation is highest and lowest.
-
-```{r}
-data |> 
-  add_Time_col() |> #add a time column
-  drop_na(Reference.check) |> #remove instances where state is unknown
-  ggplot(aes(x = Time)) + #create a plot across time
-  geom_density(aes(fill = Reference.check), position = "fill") + #with scaled stacked densities
-  scale_fill_manual(values = c("red2", "green3")) + #manual scale
-  labs(fill = "Within recommendations") #adjust legend label
-```
-
 
 Finally, we calculate exact adherance percentages across states...
 
