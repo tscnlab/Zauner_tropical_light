@@ -76,15 +76,22 @@ install.packages("melidosData")
 After installation, it becomes available for the current session by loading the package. We also require a number of packages. Most are automatically downloaded with `LightLogR`, but need to be loaded separately. Some might have to be installed separately on your local machine.
 
 ```{r}
-#| output: false
-library(melidosData) #load the package
-library(LightLogR) #load the package
-library(tidyverse) #a package for tidy data science
-library(gt) #a package for great tables
-#the following packages are needed for preview functions:
-library(svglite)
-library(xml2)
-library(downlit)
+if(!require(melidosData)) {
+  install.packages("melidosData")
+  library(melidosData)
+}
+if(!require(LightLogR)) {
+  install.packages("LightLogR")
+  library(LightLogR)
+}
+if(!require(tidyverse)) {
+  install.packages("tidyverse")
+  library(tidyverse)
+}
+if(!require(gt)) {
+  install.packages("gt")
+  library(gt)
+}
 ```
 
 We start by making a decision on the site we want to look at and collect some metadata about it.
