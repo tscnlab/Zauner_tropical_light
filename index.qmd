@@ -28,7 +28,9 @@ doi: 10.5281/zenodo.20569353
 
 ### About this document
 
-This document is part of a seminar on *Open science and FAIR data practices for personal light exposure research* and demonstrates the value and necessity of open science practices to understand scientific results and increase value of collected data beyond its initial use.
+This document is part of a seminar on *Open science and FAIR data practices for personal light exposure research* and demonstrates the value and necessity of open science practices to understand scientific results and increase value of collected data beyond its initial use. The following video showcases how core results can be reproduced and even adjusted using free and open tools.
+
+{{< video https://youtu.be/t7M39lE_RkY >}}
 
 :::
 
